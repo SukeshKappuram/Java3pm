@@ -14,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,21 +42,44 @@ public class UserController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         SimpleDateFormat sdf =new SimpleDateFormat("dd/MM/YYYY");
         PrintWriter out = response.getWriter();
+        String referer=request.getHeader("referer");
+        String mailId=request.getParameter("mailId");
+        String password=request.getParameter("password");
+        UserDAOService ud=new UserDAOImpl();
+        User u;
+        RequestDispatcher rd=request.getRequestDispatcher(referer.substring(referer.lastIndexOf("/")+1));
+        if(referer.contains("Login")){
+            //Login
+            u=ud.readUser(new User(mailId, password));
+            if(u.getFirstName()==null){
+                out.println("User Name Incorrect<br/>");
+                rd.include(request, response);
+            }
+            else if(u.getPassword().equals(password)){
+                out.println("Login Successfull");
+                response.sendRedirect("Welcome.jsp?userName="+u.getFirstName()+" "+u.getLastName());
+            }else{
+                out.println("Password Missmatch");
+                rd.include(request, response);
+            }
+            
+        }else{
         String firstName=request.getParameter("firstName");
         String lastName=request.getParameter("lastName");
         String gender=request.getParameter("gender");
         String dob=request.getParameter("dob");
         String mobileNumber=request.getParameter("mobileNumber");
-        String mailId=request.getParameter("mailId");
-        String password=request.getParameter("password");
         String cpassword=request.getParameter("cpassword");
-        
-        User u=new User(firstName, lastName, gender.charAt(0), sdf.parse(dob), mailId, mobileNumber, password);
-        UserDAOService ud=new UserDAOImpl();
+        if(password.equals(cpassword)){
+        u=new User(firstName, lastName, gender.charAt(0), sdf.parse(dob), mailId, mobileNumber, password);
         if(ud.createUser(u)>0){
             out.print("Registration Successfull");
         }else{
             out.print("Unable to Register");
+        }
+        }else{
+        out.print("Confirm Password Missmatch");
+        }
         }
     }
 

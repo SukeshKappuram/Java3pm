@@ -21,6 +21,12 @@ public class User {
     private String mobileNumber;
     private String password;
 
+    public User(String mailId, String password) {
+        this.mailId = mailId;
+        this.password = password;
+    }
+
+    
     public User(int Id, String firstName, String lastName, char gender, Date dob, String mailId, String mobileNumber, String password) {
         this.Id = Id;
         this.firstName = firstName;
