@@ -17,9 +17,11 @@ import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -57,6 +59,10 @@ public class UserController extends HttpServlet {
             }
             else if(u.getPassword().equals(password)){
                 out.println("Login Successfull");
+                Cookie c=new Cookie("UserPhone",u.getMobileNumber());
+                response.addCookie(c);
+                HttpSession session=request.getSession();
+                session.setAttribute("User", u);
                 response.sendRedirect("Welcome.jsp?userName="+u.getFirstName()+" "+u.getLastName());
             }else{
                 out.println("Password Missmatch");

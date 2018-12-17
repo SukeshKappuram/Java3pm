@@ -11,7 +11,12 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <%@include file="header.jsp"%>
         <div>
+            <%
+                session.setAttribute("User", null);
+                session.invalidate();
+            %>
             <form action="User" method="POST">
                 <table>
                     <tr>
@@ -35,5 +40,6 @@ and open the template in the editor.
                 </table>
             </form>
         </div>
+        <%@include file="footer.jsp"%>
     </body>
 </html>
