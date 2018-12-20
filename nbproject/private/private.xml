@@ -3,14 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/dao/UserDAOImpl.java</file>
             <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/controller/UserController.java</file>
-            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/db/DataSource.java</file>
-            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/web/Login.html</file>
             <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/web/Welcome.jsp</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/web/Category.jsp</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/dao/CategoryDAOImpl.java</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/web/index.jsp</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/controller/CategoryController.java</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/web/Signup.jsp</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/service/CategoryDAOService.java</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/model/Category.java</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/dao/UserDAOImpl.java</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/db/DataSource.java</file>
             <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/service/UserDAOService.java</file>
-            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/web/Signup.html</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/web/Login.jsp</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/web/footer.jsp</file>
             <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/src/java/com/ecomerce/model/User.java</file>
+            <file>file:/C:/Users/iamsu/Documents/NetBeansProjects/Ecomerce/web/header.jsp</file>
         </group>
     </open-files>
 </project-private>
